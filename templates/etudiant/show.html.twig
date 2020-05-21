@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{etudiant.nom}}{% endblock %}
+{% block stylesheets %}
+    <style>
+        .etudiant{
+            padding-top: 6rem;
+        }
+        p{
+            font-family: sans-serif;
+            font-size: 1.5rem;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container etudiant">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="mb-4">
+                {% if etudiant.filename %}
+                <img src="/assets/{{ etudiant.filename }}" alt="card-img-top" style="width: 15rem; height:auto;">
+                {% else %}
+                    <img src="{{ '/assets/item-2.jpg' }}" alt="card-img-top" style="width: 15rem; height: auto;">
+                {% endif %}
+                </div>
+                <div class="mb-4">
+                        <p>Nom: {{ etudiant.nom }}</p>
+                        <td></td>
+                        <p>Prenom: {{ etudiant.prenom }}</p>
+                        <td></td>
+                        <p>Faculté: {{ etudiant.faculte.name}}</p>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Math</th>
+                            <td>{{ etudiant.math }}</td>
+                        </tr>
+                        <tr>
+                            <th>Physique</th>
+                            <td>{{ etudiant.physique }}</td>
+                        </tr>
+                        <tr>
+                            <th>Geo</th>
+                            <td>{{ etudiant.geo }}</td>
+                        </tr>
+                        <tr>
+                            <th>Histoire</th>
+                            <td>{{ etudiant.histoire }}</td>
+                        </tr>
+                        <tr>
+                            <th>Francais</th>
+                            <td>{{ etudiant.francais }}</td>
+                        </tr>
+                        <tr>
+                            <th>Gestion</th>
+                            <td>{{ etudiant.gestion }}</td>
+                        </tr>
+                        <th></th>
+                        <td></td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-12">
+                <a href="{{ path('etudiant_index') }}" class="btn btn-secondary">Back to list</a>
+            </div>
+
+        <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}" class="btn btn-secondary">Edit</a>
+        </div>
+        
+
+        {{ include('etudiant/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

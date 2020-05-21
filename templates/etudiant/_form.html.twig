@@ -1,0 +1,21 @@
+{{ form_start(form) }}
+<div class="container">
+   <div class="row">
+    <div class="col md-4">{{ form_row(form.nom) }}</div>
+    <div class="col md-4">{{ form_row(form.prenom) }}</div>
+</div>
+<div class="row">
+    <div class="col md-4">{{ form_row(form.math) }}</div>
+    <div class="col md-2"> {{ form_row(form.francais) }} </div>
+    <div class="col md-2"> {{ form_row(form.physique) }} </div>
+    <div class="col md-3">{{ form_row(form.histoire) }}</div>
+</div>
+<div class="row">
+    <div class="col md-3">{{ form_row(form.geo) }}</div>
+    <div class="col md-3">{{ form_row(form.gestion) }}</div>
+    <div class="col md-4">{{ form_row(form.imageFile) }}</div>
+</div>
+{{ form_rest(form) }} 
+<button class="btn btn-dark mb-4 text-center"> {{ button|default('Enregistrer') }} </button>
+</div>
+{{ form_end(form) }}

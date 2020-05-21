@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les biens{% endblock %}
+{% block stylesheets %}
+    <style>
+        .tabs h3{
+            font-size: 1rem;
+            padding-top: 3rem;
+        }
+        .tabs{
+            background-color: whitesmoke;
+            height: 30rem;
+        }
+        .tabs-content{
+            background-color: lightblue;
+            display: none;
+        }
+        .tabs-content.visible{
+            display:block;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-12 tabs">
+        <h3>Gestion des étudiants</h3>
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Etudiants
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="">
+                    <a href="{{ path('admin.etudiant.index') }}" class= "btn btn-light">Afficher</a>
+                </div>
+              <div class="">
+                <a href="{{ path('admin_new') }}" class= "btn btn-light">Nouveau</a>
+            </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12">
+        <div class="tabs-content">
+            <h2>Gérer les biens</h2>
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for etudiant in etudiants %}
+                    <tr>
+                        <td> {{ etudiant.title }} </td>
+                        <td>
+                            <a href="{{ path('admin.etudiant.edit', {id:etudiant.id}) }}" class="btn btn-secondary">Edit</a>
+                            <form method="POST" action="{{ path('admin.etudiant.delete', 
+                            {id:etudiant.id}) }}" style="display: inline-block;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ etudiant.id) }}">
+                                <button class="btn btn-danger">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+    
+{% endblock %}
+{% block javascripts %}
+    <script>
+
+    </script>
+{% endblock %}

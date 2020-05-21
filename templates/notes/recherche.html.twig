@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="col-lg-6 col-md-6 col-sm-12 image">
+    <p>Veux-tu voir tes notes? Remplissez ce champ</p>
+    <form action="/public/verifier/recherche.php" method="post">
+        <div class="row">
+            <input type="text" placeholder="Votre nom" name="nom" class="form-control mb-4">
+        </div>
+        <button type="submit" class="btn btn-primary">Rechercher</button>
+        
+    </form>
+    
+</div>
+{% endblock %}

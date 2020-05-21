@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etudiant index{% endblock %}
+{% block stylesheets %}
+    <style>
+        .btn{
+            justify-content: center;
+            display:end;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h2 class="text-center">Admin Etudiant</h2>
+    <div class="row">
+        <button href="{{ path('etudiant_new') }}" class="btn btn-primary text-uppercase float-right mb-4 mx-4">Create new</button>
+    </div>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th class="text-center">Id</th>
+                <th class="text-center">Nom</th>
+                <th class="text-center">Prenom</th>
+                <th class="text-center">Math</th>
+                <th class="text-center">Physique</th>
+                <th class="text-center">Geo</th>
+                <th class="text-center">Histoire</th>
+                <th class="text-center">Francais</th>
+                <th class="text-center">Gestion</th>
+                <th class="text-center">Filename</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for etudiant in etudiants %}
+            <tr>
+                <td class="text-center">{{ etudiant.id }}</td>
+                <td class="text-center">{{ etudiant.nom }}</td>
+                <td class="text-center">{{ etudiant.prenom }}</td>
+                <td class="text-center">{{ etudiant.math }}</td>
+                <td class="text-center">{{ etudiant.physique }}</td>
+                <td class="text-center">{{ etudiant.geo }}</td>
+                <td class="text-center">{{ etudiant.histoire }}</td>
+                <td class="text-center">{{ etudiant.francais }}</td>
+                <td class="text-center">{{ etudiant.gestion }}</td>
+                <td class="text-center">{{ etudiant.filename }}</td>
+                <td class="text-center">
+                    <a href="{{ path('etudiant_show', {'id': etudiant.id}) }}" class="btn btn-info">show</a>
+                    <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}" class="btn btn-info">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
