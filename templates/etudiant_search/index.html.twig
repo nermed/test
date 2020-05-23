@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Recherche{% endblock %}
+{% block stylesheets %}
+  <style>
+    .recherche{
+      padding-top: 4rem;
+      background-color: whitesmoke;
+      height: 30rem;
+    }
+    .recherche .container{
+      padding-top: 2rem;
+      background-image: url('etudiant_search/item-3.jpg') no-repeat;
+    }
+  </style>
+{% endblock %}
+{% block body %}
+{% include "nav.html.twig" %}
+<div class="body">
+<div class="recherche" >
+<div class="container card text-center mt-4 border-0" style="width:30rem; background-color: whitesmoke;">
+  <h3>Recherche</h3>
+    <div class="nothing">
+        <div class="row">
+            <div class="col-12 mt-4">
+                {{form_start(form)}}
+                    {{form_row(form.nom)}}
+                    {#{{form_row(form.faculte)}}#}
+                    {{form_row(form.submit)}}
+                {{form_end(form)}}
+            </div>
+        </div>
+    </div>
+    {% if etudiants %}
+    <table id="etudiants" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Faculte</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for etudiant in etudiants %}
+          <tr>
+            <td>{{ etudiant.nom }}</td>
+            <td>{{ etudiant.prenom }}</td>
+             <td>{{ etudiant.faculte.name }}</td>
+           <td>
+            <a href="{{ path('etudiant.show', {'nom': etudiant.nom}) }}" class="btn btn-info text-uppercase">show</a>
+              {#<a href="/etudiant/edit/{{ etudiant.id }}" class="btn btn-dark">Modifier</a>
+              <a href="/etudiant/delete/{{ etudiant.id }}" class="btn btn-danger" 
+              onclick="return /*confirm('Etes-vous sûr de supprimer cet etudiant?');">Supprimer</a>#}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Entrez votre nom dans la case</p>
+  {% endif %} 
+</div>
+</div>
+</div>
+{% endblock %}

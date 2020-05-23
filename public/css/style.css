@@ -13,7 +13,9 @@
     --anton: "Anton", cursive;
     --lato: "Lato", cursive;
 }
-
+body{
+    background-color: #E0DEDA;
+}
 .primary-color{
     color: var(--primary-color);
 }
@@ -34,9 +36,9 @@ header{
     background-color: whitesmoke;
     font-family: var(--roboto);
 }
-header .container{
+/*header .container{
     height: 6.5rem;
-}
+}*/
 header .site-title{
     font-family: var(--gugi);
 }
@@ -127,17 +129,28 @@ header .site-title{
 }
 h2{
     font-size: 1.5rem;
+    padding: 1.5rem 0 2rem 0;
 }
 p{
     font-family: var(--lato);
+    font-size: 1.5rem;
 }
 /* End Informations */
 /* Contact */
-.contact .image{
-    padding:4rem 0 0 6rem !important;
+.contact{
+    background-color: #E5D9C2;
+}
+.contact .title{
+    padding-top: 2rem;
+}
+.contact .para{
+    padding:3rem 0 0 2rem !important;
 }
 /* End Contact */
 /* Footer Area */
+footer{
+    background-color: whitesmoke;
+}
 footer.footer-area{
     padding: 1.5rem 0;
     /*background: #C3CAC6;*/
@@ -154,3 +167,43 @@ footer.footer-area .social a:hover > i{
     color: var(--primary-color);
 }
 /* End Footer Area*/
+
+/* Responsive */
+@media only screen and(max-width: 80px){
+    .site-main .services-area .service{
+        padding: 0%;
+        margin: 0%;
+    }
+}
+/* if the viewport is equal to 340px or less than that*/
+@media only screen and(max-width: 350px){
+    .header .container .logo{
+        width: auto;
+    }
+    .header .navbar{
+        height: 3rem;
+    }
+    .para{
+        font-size: 1.2rem;
+    }
+    
+}
+@media only screen and(max-width: 800px){
+    .header .container .logo{
+        display:none;
+    }
+    .header .navbar{
+        height: 3rem;
+    }
+    .para{
+        font-size: 1.2rem;
+    }
+}
+@media only screen and(max-width: 1910px){
+    .header .container .logo1{
+        display:none;
+    }
+    .header .navbar{
+        height: 3rem;
+    }
+}

@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Search;
 use Doctrine\ORM\Query;
 use App\Entity\Etudiant;
 use App\Entity\EtudiantSearch;
@@ -21,9 +22,10 @@ class EtudiantRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Etudiant::class);
     }
-    /**
-     * @return Query
-     */
+ //   /**
+   //  * @return Query
+    // */
+    /*
     public function findAllVisibleQuery(EtudiantSearch $search): Query
     {
         $query = $this->findAllQuery();
@@ -38,7 +40,7 @@ class EtudiantRepository extends ServiceEntityRepository
 
         return $query->getQuery();
     }
-
+    */
     // /**
     //  * @return Etudiant[] Returns an array of Etudiant objects
     //  */
@@ -53,9 +55,28 @@ class EtudiantRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
+    }*/
+    public function findAllVisibleQuery(Search $search): Query
+    {
+        $query = $this->findAllQuery();
+        if($search -> getNom()){
+           $query = $query->andWhere('e.nom = :nom')
+                           ->setParameter('nom', $search->getNom());
+        }
+        return $query->getQuery();
     }
-    */
-
+    
+    /*public function findByNom($search): ?Etudiant
+    {
+        return $this->createQueryBuilder('e')
+            ->andWhere('e.nom = :nom')
+            ->setParameter('nom', $search->getNom())
+            //->andWhere('e.faculte = :faculte')
+            //->setParameter('faculte', $search['faculte']->getName())
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }*/
     /*
     public function findOneBySomeField($value): ?Etudiant
     {
@@ -69,6 +90,6 @@ class EtudiantRepository extends ServiceEntityRepository
     */
     private function findAllQuery():QueryBuilder
     {
-        return $this->createQueryBuilder('p');
+        return $this->createQueryBuilder('e');
     }
 }

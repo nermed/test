@@ -16,13 +16,13 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header class="header">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-12 col-12">
                     <div class="logo">
                         <button class="btn my-md-2 my-2">
-                            <a href="#"><img src="/assets/diplome.png" alt="logo"></a>
+                            <a href="/"><img src="/assets/diplome.png" alt="logo"></a>
                         </button>
                     </div>
                 </div>
@@ -30,28 +30,32 @@
                     <h2 class="my-md-3 site-title text-primary">Université</h2>
                 </div>
                 <div class="col-md-4 col-12 text-right">
-                    <p class="my-md-4 header-links">
+                    
+                    <!--<p class="my-md-4 header-links">
                         <a href="#" class="px-2">Sign in</a>
                         <a href="#" class="px-1">Create account</a>
-                    </p>
+                    </p>-->
                 </div>
             </div>
         </div>
         <div class="container-fluid p-0 text-center">
             <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">ACCUEIL <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.html">ACCUEIL <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">INFORMATIONS</a>
+                  <a class="nav-link" href="#informations">INFORMATIONS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">NOTES</a>
+                  <a class="nav-link" href="#contact">ABOUT US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">ABOUT US</a>
+                    <a class="nav-link" href="/etudiant/search">RECHERCHE</a>
                   </li>
               </ul>
             </div>
@@ -63,17 +67,17 @@
     <!-- Main-->
     <main>
         <!-- Slider -->
-        <div class="container-fluid slide p-0">
+        <div class="container slide p-0">
             <div class="site-slider">
                 <div class="slider-one">
                     <div>
-                        <img src="/assets/item-1.jpg" class="img-fluid" alt="Banner 1">
+                        <img src="/assets/item-1.jpg" class="img-fluid" alt="Banner 1" style="height: 30rem; width:max-content;">
                     </div>
                     <div>
-                        <img src="/assets/item-2.jpg" class="img-fluid" alt="Banner 2">
+                        <img src="/assets/item-2.jpg" class="img-fluid" alt="Banner 2" style="height: 30rem; width:max-content;">
                     </div>
                     <div>
-                        <img src="/assets/item-3.jpg" class="img-fluid" alt="Banner 3">
+                        <img src="/assets/item-3.jpg" class="img-fluid" alt="Banner 3" style="height: 30rem; width:max-content;">
                     </div>
                 </div>
                 <div class="slider-btn">
@@ -88,12 +92,12 @@
         </div>
         <!-- /Slider -->
         <!-- Information -->
-        <section class="container information">
+        <section class="container information" id="informations">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 py-2">
-                    <h2>DOCUMENTS EXIGES POUR LES INSCRIPTIONS ANNEE  ACADEMIQUE 2018-2019</h2>
+                    <h2>DOCUMENTS EXIGES POUR LES INSCRIPTIONS ANNEE ACADEMIQUE</h2>
 
-                        <p>une copie du ou des diplômes certifie (s) conforme (s) a l’original;
+                        <p class="para">une copie du ou des diplômes certifie (s) conforme (s) a l’original;
                         une attestation originale de participation ou de réussite a l’Examen d’Etat ;
                         une attestation d’identité complète ou une attestation de naissance ou une attestation d’Etat -Civil ;
                         une attestation originale d'équivalence pour tous les diplômes obtenus à l'étranger;
@@ -103,26 +107,26 @@
                         original du ou des bulletin (s) délivré (s) par la ou les université (s) antérieurement  fréquenté (s)
                         frais à l’inscription de 40 000 ventilés comme suit:</p>
 
-                        <p>1)  inscription : 25 000</p>                                       
+                        <p class="para">1)  inscription : 25 000</p>                                       
 
-                        <p>2)  polycopies des questionnaires d'examen pour toute l'année ( examens continus, première session et deuxième session): 10 000</p>
+                        <p class="para">2)  polycopies des questionnaires d'examen pour toute l'année ( examens continus, première session et deuxième session): 10 000</p>
 
-                        <p>3) assurance: 5000</p>
+                        <p class="para">3) assurance: 5000</p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 py-2">
                 <h2>LES FACULTES:</h2>
 
                <h5>1. Faculté des Sciences et Technologies:</h5>
 
-                  <p>(1)  Département de Génie Civil ;</p>
+                  <p class="para">(1)  Département de Génie Civil ;</p>
 
-                  <p>(2) Département  de Maintenance Informatique et Réseau</p>
+                  <p class="para">(2) Département  de Maintenance Informatique et Réseau</p>
 
                    <h5>2. Faculté des Sciences Economiques et de Gestion avec deux  Départements à savoir :</h5>
 
-                    <p>(1) Département d' Audit et Contrôle de Gestion ;</p>
+                    <p class="para">(1) Département d' Audit et Contrôle de Gestion ;</p>
 
-                    <p>(2) Département de  Marketing et de Management ;</p>
+                    <p class="para">(2) Département de  Marketing et de Management ;</p>
 
                 <h5>3. Faculté des Statistiques ;</h5>
 
@@ -138,7 +142,7 @@
         <section class="page-section contact" id="contact">
             <div class="container">
                 <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Us</h2>
+                <h2 class="title page-section-heading text-center text-uppercase text-secondary text-uppercase">About us</h2>
                 <!-- Contact Section Form-->
                 <div class="row">
                     <!--<div class="col-lg-6 col-md-6 col-sm-12">
@@ -167,16 +171,15 @@
                             <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Envoyer</button></div>
                         </form>
                     </div>-->
-                    <div class="col-lg-6 col-md-6 col-sm-12 image">
-                        <p>Veux-tu voir tes notes? Remplissez ce champ</p>
-                        <form action="recherche.php" method="post">
-                            <div class="row">
-                                <input type="text" placeholder="Votre nom" name="nom" class="form-control mb-4">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Rechercher</button>
+                    <div class="col-lg-6 col-md-6 col-sm-12 para">
+                        <p>La communauté universitaire entière vous souhaite la bienvenue sur ce site et sur ses campus.
+
+                            Ainsi, non seulement une référence constituera le meilleur compliment que vous pourrez nous faire mais aussi nous souhaiterions rester ensemble pour notre progrès et travailler ensemble pour notre réussite.
                             
-                        </form>
-                        
+                            Nos formations sont aujourd'hui organisées à travers sept Facultés; huit  Filières Professionnelles ou Instituts ainsi que six Mastères( voir détails dans nos formations).</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 para">
+                        <p>Pour cette année académique 2018-2019, l'objectif principal de l'Université Sagesse d'Afrique est de passer de la performance  à l'excellence. Nous  allons améliorer  particulièrement la qualité des enseignants, des enseignements, des équipements et des infrastructures.</p>
                     </div>
                 </div>
             </div>
